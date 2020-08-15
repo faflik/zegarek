@@ -24,13 +24,12 @@ def get_ports():
     # dictionary of available ports
     av_ports = {}
 
-    i = 1
-    for p in comPorts:
+    for i,p in enumerate (comPorts,1):
         # print available port
         print(f'{i}. {p.device} - {p.manufacturer} - {p.description}')
         # add to dictionary
         av_ports[i] = p.device
-        i += 1
+        
     print("Select comport: ")
     while 1:
         port = int(input())
@@ -38,7 +37,6 @@ def get_ports():
             print("Expected number of available ports (e.g 1, 2 ...)")
         else:
             break
-
     return av_ports.get(port)
 
 
