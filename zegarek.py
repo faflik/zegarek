@@ -44,7 +44,7 @@ def send():
 
     ser = serial.Serial()
     ser.baudrate = BAUD
-    ser.port = get_ports()
+    ser.port = '/dev/ttyS0'
     ser.open()
     date_time = datetime.now().strftime("AT+SET?:%H:%M:%S:%y:%m:%d:%w\n\r")
     ser.write(date_time.encode())
