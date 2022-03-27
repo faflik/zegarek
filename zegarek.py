@@ -46,8 +46,9 @@ def send():
     ser.baudrate = BAUD
     ser.port = '/dev/ttyS0'
     ser.open()
-    date_time = datetime.now().strftime("AT+SET?:%H:%M:%S:%y:%m:%d:%w\n\r")
-    ser.write(date_time.encode())
+    date_time = datetime.now().strftime("AT+SET?:%H:%M:%S:%y:%m:%d:%w\n\r").encode()
+    ser.write(date_time)
+    #print(date_time)
     # ser.write("AT+RST?\n\r".encode())
     ser.close()
 
