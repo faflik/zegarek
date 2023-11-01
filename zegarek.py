@@ -1,4 +1,7 @@
 """
+
+chmod a+rw /dev/ttyUSB0 na proxmox
+
 The easy way:
 sudo edit /etc/udev/rules.d/50-myusb.rules
 
